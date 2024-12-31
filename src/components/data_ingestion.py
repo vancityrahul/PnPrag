@@ -3,6 +3,7 @@ from src.exception import PnpragException
 import sys
 import json
 import PyPDF2 as p
+import pandas as pd
 
 @dataclass
 class DataIngestionConfig():
@@ -34,19 +35,24 @@ class DataIngestion():
         try :
             with open(f'{self.filePath}{self.fileName}' , "r") as f:
                 return json.load(f)
-
         except : raise PnpragException("Error reading JSON file" ,sys)
 
     def _read_txt(self):
         try :
             with open(f'{self.filePath}{self.fileName}' , "r") as f:
                 return f.read()
-        except : raise PnpragException("Error reading JSON file" ,sys)
+        except : raise PnpragException("Error reading TXT file" ,sys)
             
     def _read_pdf(self):
         try :
             with open(f'{self.filePath}{self.fileName}' , "r") as f:
                 return p.PdfReader(f)
-        except : raise PnpragException("Error reading JSON file" ,sys)
+        except : raise PnpragException("Error reading PDF file" ,sys)
+    
+    def _read_csv(self):
+        try :
+            with open(f'{self.filePath}{self.fileName}' , "r") as f:
+                return pd.read_csv(f)
+        except : raise PnpragException("Error reading CSV file" ,sys)
 
 
