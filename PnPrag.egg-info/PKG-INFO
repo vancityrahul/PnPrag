@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: PnPrag
+Version: 0.0.1
+Author: anmol-rahul
+Author-email: None
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: PyPDF2
