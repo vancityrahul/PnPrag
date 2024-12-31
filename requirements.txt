@@ -1,4 +1,4 @@
 setuptools
-pypdf
+PyPDF2
 pandas
 numpy
